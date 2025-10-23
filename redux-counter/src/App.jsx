@@ -1,35 +1,98 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import {
+  increment,
+  decrement,
+  incrementByFive,
+  decrementByFive,
+  addAmount,
+  subAmount,
+} from "./store/counterSlice.js";
+import { useRef } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+  const count = useSelector((state) => state.counter.value);
+  const inputRef = useRef();
+
+  const handleIncrement = () => {
+    dispatch(increment());
+  };
+
+  const handleDecrement = () => {
+    dispatch(decrement());
+  };
+
+  const handleIncrementByAmount = () => {
+    dispatch(incrementByFive());
+  };
+
+  const handleDecrementByAmount = () => {
+    dispatch(decrementByFive());
+  };
+
+  const handleAdd = () => {
+    const amount = Number(inputRef.current.value) || 0;
+    // dispatch action to add amount
+    dispatch(addAmount(amount));
+    inputRef.current.value = "";
+  };
+  const handleSub = () => {
+    const amount = Number(inputRef.current.value) || 0;
+    // dispatch action to subtract amount
+    dispatch(subAmount(amount));
+    inputRef.current.value = "";
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="container-fluid pt-5">
+        <div className="container pt-5">
+          <div className="row">
+            <div className="col-4"></div>
+            <div className="col-4 pt-5 pb-3 text-center border rounded shadow">
+              <h1>Counter App</h1>
+              <h3>Counter: {count}</h3>
+              <button className="btn btn-primary m-2" onClick={handleIncrement}>
+                Increment
+              </button>
+              <button className="btn btn-danger m-2" onClick={handleDecrement}>
+                Decrement
+              </button>
+              <button
+                className="btn btn-secondary m-2"
+                onClick={handleIncrementByAmount}
+              >
+                increment +5
+              </button>
+              <button
+                className="btn btn-secondary m-2"
+                onClick={handleDecrementByAmount}
+              >
+                decrement -5
+              </button>
+              <br />
+              <input
+                type="text"
+                placeholder="Enter number"
+                className="form-control"
+                ref={inputRef}
+              />
+              <button className="btn btn-info m-2" onClick={handleAdd}>
+                Add
+              </button>
+              <button className="btn btn-warning m-2" onClick={handleSub}>
+                Subtract
+              </button>
+            </div>
+            <div className="col-4"></div>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
