@@ -48,27 +48,33 @@ function App() {
 
   return (
     <>
-      <div className="container-fluid pt-5">
-        <div className="container pt-5">
-          <div className="row">
-            <div className="col-4"></div>
-            <div className="col-4 pt-5 pb-3 text-center border rounded shadow">
+      <div classNameName="container-fluid pt-5">
+        <div classNameName="container pt-5">
+          <div classNameName="row">
+            <div classNameName="col-4"></div>
+            <div classNameName="col-4 pt-5 pb-3 text-center border rounded shadow">
               <h1>Counter App</h1>
               <h3>Counter: {count}</h3>
-              <button className="btn btn-primary m-2" onClick={handleIncrement}>
+              <button
+                classNameName="btn btn-primary m-2"
+                onClick={handleIncrement}
+              >
                 Increment
               </button>
-              <button className="btn btn-danger m-2" onClick={handleDecrement}>
+              <button
+                classNameName="btn btn-danger m-2"
+                onClick={handleDecrement}
+              >
                 Decrement
               </button>
               <button
-                className="btn btn-secondary m-2"
+                classNameName="btn btn-secondary m-2"
                 onClick={handleIncrementByAmount}
               >
                 increment +5
               </button>
               <button
-                className="btn btn-secondary m-2"
+                classNameName="btn btn-secondary m-2"
                 onClick={handleDecrementByAmount}
               >
                 decrement -5
@@ -77,17 +83,17 @@ function App() {
               <input
                 type="text"
                 placeholder="Enter number"
-                className="form-control"
+                classNameName="form-control"
                 ref={inputRef}
               />
-              <button className="btn btn-info m-2" onClick={handleAdd}>
+              <button classNameName="btn btn-info m-2" onClick={handleAdd}>
                 Add
               </button>
-              <button className="btn btn-warning m-2" onClick={handleSub}>
+              <button classNameName="btn btn-warning m-2" onClick={handleSub}>
                 Subtract
               </button>
             </div>
-            <div className="col-4"></div>
+            <div classNameName="col-4"></div>
           </div>
         </div>
       </div>
