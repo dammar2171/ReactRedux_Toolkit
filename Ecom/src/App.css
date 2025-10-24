@@ -1,0 +1,23 @@
+/* Header css */
+.bagBtn{
+  background-color: white;
+  color: black;
+  font-size: 1.6rem;
+  border: none;
+  margin-bottom: 0.3rem;
+}
+
+.bagBtn span{
+  position: absolute;
+  top:1.1rem;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  right: 8rem;
+}
+
+/* herosection css */
+.costum-heroSection{
+  background-image: url("./assets/laptop-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
