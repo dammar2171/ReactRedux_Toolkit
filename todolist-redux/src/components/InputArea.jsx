@@ -13,7 +13,6 @@ const InputArea = () => {
     const id = Date.now();
     if (newTask) {
       // Dispatch the addTodo action with the new task
-      console.log({ text: newTask, dueDate, id });
       dispatch(addTodo({ text: newTask, dueDate, id }));
       inputRef.current.value = "";
       dateRef.current.value = "";
