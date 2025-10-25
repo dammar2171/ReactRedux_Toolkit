@@ -1,4 +1,6 @@
 import logo from "../assets/logo.jpg";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="container">
@@ -22,17 +24,13 @@ const Footer = () => {
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
           {" "}
           <li className="ms-3">
-            <a className="text-body-secondary" href="#" aria-label="Instagram">
-              <svg className="bi" width={24} height={24} aria-hidden="true">
-                <use xlinkHref="#instagram" />
-              </svg>
+            <a className="text-body-secondary" href="#">
+              <FaFacebook />
             </a>
           </li>{" "}
           <li className="ms-3">
-            <a className="text-body-secondary" href="#" aria-label="Facebook">
-              <svg className="bi" width={24} height={24}>
-                <use xlinkHref="#facebook" />
-              </svg>
+            <a className="text-body-secondary" href="#">
+              <FaInstagramSquare />
             </a>
           </li>{" "}
         </ul>{" "}

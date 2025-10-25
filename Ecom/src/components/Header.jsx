@@ -1,38 +1,52 @@
 import logo from "../assets/logo.jpg";
 import { FiShoppingBag } from "react-icons/fi";
+import user from "../assets/user.png";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <header className="p-3 mb-3 border-bottom ">
+    <header className="p-3  border-bottom shadow">
       {" "}
       <div className="container">
         {" "}
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           {" "}
-          <a
-            href="/"
-            className="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
+          <Link
+            to="/"
+            className="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none "
           >
             <img src={logo} width={50} height={40} className="rounded" />
-          </a>
-          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-3">
+          </Link>
+          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-5">
             {" "}
             <li>
-              <a href="#" className="nav-link px-2 link-body-emphasis">
+              <Link
+                to="/"
+                className="nav-link px-2 link-body-emphasis costum-link-header"
+              >
                 Home
-              </a>
+              </Link>
             </li>{" "}
             <li>
-              <a href="#" className="nav-link px-2 link-body-emphasis">
+              <a
+                href="#"
+                className="nav-link px-2 link-body-emphasis costum-link-header"
+              >
                 Shop
               </a>
             </li>{" "}
             <li>
-              <a href="#" className="nav-link px-2 link-body-emphasis">
+              <a
+                href="#"
+                className="nav-link px-2 link-body-emphasis costum-link-header"
+              >
                 Favorite
               </a>
             </li>{" "}
             <li>
-              <a href="#" className="nav-link px-2 link-body-emphasis">
+              <a
+                href="#"
+                className="nav-link px-2 link-body-emphasis costum-link-header"
+              >
                 Products
               </a>
             </li>{" "}
@@ -60,8 +74,8 @@ const Header = () => {
               aria-expanded="false"
             >
               <img
-                src="https://github.com/mdo.png"
-                alt="mdo"
+                src={user}
+                alt="user"
                 width={32}
                 height={32}
                 className="rounded-circle"

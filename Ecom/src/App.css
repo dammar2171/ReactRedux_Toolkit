@@ -1,18 +1,68 @@
 /* Header css */
-.bagBtn{
+.bagBtn {
   background-color: white;
   color: black;
   font-size: 1.6rem;
   border: none;
   margin-bottom: 0.3rem;
+  position: relative; 
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
-.bagBtn span{
+.bagBtn .badge {
   position: absolute;
-  top:1.1rem;
-  font-size: 0.8rem;
+  top: 0;
+  right: 0.2rem;
+  font-size: 0.7rem;
   border-radius: 50%;
-  right: 8rem;
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+.bagBtn .bag {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .bagBtn {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .bagBtn .badge {
+    font-size: 0.6rem;
+    top: 0.1rem;
+    right: 0.1rem;
+  }
+
+  .bagBtn .bag {
+    font-size: 1.2rem;
+  }
+}
+
+.costum-link-header {
+  position: relative;
+  text-decoration: none;
+}
+.costum-link-header::after {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #0DCAF0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.costum-link-header:hover::after {
+  transform: scaleX(0.8);
+  transform-origin: left;
 }
 
 /* herosection css */
@@ -21,3 +71,4 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+

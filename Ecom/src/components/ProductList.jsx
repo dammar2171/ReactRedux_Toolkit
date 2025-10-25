@@ -1,19 +1,12 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function ProductList() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("/api/products")
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const navigate = useNavigate();
+  const products = useSelector((state) => state.products);
+  const handleView = () => {
+    navigate("/detail");
+  };
   return (
     <div className="album py-5 bg-body-tertiary">
       <div className="container">
@@ -39,6 +32,7 @@ function ProductList() {
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
                         <button
+                          onClick={handleView}
                           type="button"
                           className="btn btn-sm btn-outline-secondary"
                         >
