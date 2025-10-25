@@ -72,3 +72,39 @@
   background-size: cover;
 }
 
+/* view detail css */
+.key-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1rem; 
+  margin-top: 1rem;
+}
+
+.key-specs .d-flex {
+  align-items: start;
+  background-color: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.key-specs .d-flex span {
+  display: flex;
+  flex-direction: column;
+}
+
+.key-specs .d-flex span span {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.key-specs .d-flex span p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.key-specs svg {
+  font-size: 1.5rem;
+  color: #007bff; 
+}

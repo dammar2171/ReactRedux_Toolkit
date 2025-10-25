@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail" element={<ViewDetail />} />
+          <Route path="/detail/:id" element={<ViewDetail />} />
         </Routes>
         <Footer />
       </Router>

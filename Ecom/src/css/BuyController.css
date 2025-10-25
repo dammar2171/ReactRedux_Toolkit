@@ -1,0 +1,51 @@
+.container-fluid.d-flex {
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.addBtn,
+.subBtn,
+.addToCartBtn {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addBtn {
+  background-color: #28a745;
+  color: white;
+}
+
+.subBtn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.addToCartBtn {
+  background-color: #007bff;
+  color: white;
+  min-width: 66%;
+  font-weight: 600;
+}
+
+.addBtn:hover,
+.subBtn:hover,
+.addToCartBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.quantityArea {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  min-width: 40px;
+  text-align: center;
+}

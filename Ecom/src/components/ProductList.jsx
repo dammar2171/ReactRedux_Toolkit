@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 function ProductList() {
   const navigate = useNavigate();
   const products = useSelector((state) => state.products);
-  const handleView = () => {
-    navigate("/detail");
+  const handleView = (id) => {
+    navigate(`/detail/${id}`);
   };
   return (
     <div className="album py-5 bg-body-tertiary">
@@ -32,7 +32,9 @@ function ProductList() {
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
                         <button
-                          onClick={handleView}
+                          onClick={() => {
+                            handleView(item.id);
+                          }}
                           type="button"
                           className="btn btn-sm btn-outline-secondary"
                         >
@@ -50,7 +52,7 @@ function ProductList() {
                       </small>
                     </div>
                   </div>
-                </div>{" "}
+                </div>
               </div>
             ))}
         </div>

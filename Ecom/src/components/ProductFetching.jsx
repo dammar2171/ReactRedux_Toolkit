@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import axios from "axios";
 
 const ProductFetching = () => {
-  const fetchStatus = useSelector((store) => store.fetchStatus);
+  const fetchStatus = useSelector((state) => state.fetchStatus);
   const dispatch = useDispatch();
 
   useEffect(() => {
