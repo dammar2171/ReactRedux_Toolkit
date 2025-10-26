@@ -12,7 +12,7 @@ app.get("/api/products",(req,res)=>{
     {
       id:1,
       productName:"Lenovo IdeaPad 1 14IGL7 ",
-      productPrice:"38,000",
+      productPrice:38000,
       type:"General",
       display:'"14" FHD 60Hz',
       cpu:"Intel Celeron N4020",
@@ -26,7 +26,7 @@ app.get("/api/products",(req,res)=>{
     {
       id:2,
       productName:"Acer Aspire Lite 14 AL14-31P-36ZY ",
-      productPrice:"50,999",
+      productPrice:50999,
       type:"Traditional",
       display:'"14" WUXGA 60Hz',
       cpu:"Intel Core i3-N300",
@@ -40,7 +40,7 @@ app.get("/api/products",(req,res)=>{
     {
       id:3,
       productName:"Lenovo V15 G4 IRU 2023 ",
-      productPrice:"55,500",
+      productPrice:55500,
       type:"Traditional",
       display:'"15.6" FHD 60Hz',
       cpu:"i3-1315U",
@@ -54,7 +54,7 @@ app.get("/api/products",(req,res)=>{
   ]
  setTimeout(() => {
    res.json(products);
- }, 2000);
+ }, 1000);
 })
 
 app.listen(PORT,()=>{

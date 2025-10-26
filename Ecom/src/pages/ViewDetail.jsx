@@ -83,7 +83,7 @@ const ViewDetail = () => {
                 </span>
               </div>
             </div>
-            <BuyController />
+            <BuyController product={product} />
           </div>
         </div>
       </div>

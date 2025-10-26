@@ -1,0 +1,153 @@
+
+/* Header css */
+.bagBtn {
+  background-color: white;
+  color: black;
+  font-size: 1.6rem;
+  border: none;
+  margin-bottom: 0.3rem;
+  position: relative; 
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.bagBtn .badge {
+  position: absolute;
+  top: 0;
+  right: 0.2rem;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+.bagBtn .bag {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .bagBtn {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .bagBtn .badge {
+    font-size: 0.6rem;
+    top: 0.1rem;
+    right: 0.1rem;
+  }
+
+  .bagBtn .bag {
+    font-size: 1.2rem;
+  }
+}
+
+.costum-link-header {
+  position: relative;
+  text-decoration: none;
+}
+.costum-link-header::after {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #0DCAF0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.costum-link-header:hover::after {
+  transform: scaleX(0.8);
+  transform-origin: left;
+}
+
+/* Offcanvas container */
+.offcanvas-body {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header row for bag items */
+.bag-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Individual bag item */
+.bag-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.75rem;
+}
+
+/* Product image */
+.bag-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Product details */
+.bag-item-details {
+  flex-grow: 1;
+}
+
+.bag-item-details h6 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.bag-item-details p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Delete button */
+.bag-item button {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Total and checkout */
+.bag-total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-btn {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #0b5ed7;
+}

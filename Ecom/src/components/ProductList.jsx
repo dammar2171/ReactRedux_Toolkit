@@ -1,11 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToBag, deleteFromBag } from "../store/BagSlice";
 
 function ProductList() {
   const navigate = useNavigate();
   const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+
   const handleView = (id) => {
     navigate(`/detail/${id}`);
+  };
+
+  const handleBuyNow = (item) => {
+    dispatch(addToBag({ ...item, quantity: 1 }));
   };
   return (
     <div className="album py-5 bg-body-tertiary">
@@ -41,6 +48,7 @@ function ProductList() {
                           View
                         </button>
                         <button
+                          onClick={() => handleBuyNow(item)}
                           type="button"
                           className="btn btn-sm btn-outline-secondary"
                         >

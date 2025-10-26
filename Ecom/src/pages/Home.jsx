@@ -6,9 +6,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 
 const Home = () => {
   const fetchStatus = useSelector((state) => state.fetchStatus);
-  console.log("fetching status: ", fetchStatus);
-  console.log("currently fetching", fetchStatus.currentlyFetching);
-
+  
   return (
     <>
       <HeroSection />

@@ -11,11 +11,7 @@ function HeroSection() {
             right device to match your needs and budget. Shop now and experience
             seamless computing with unbeatable deals and fast delivery.
           </p>
-          <p>
-            <a href="#" className="btn btn-info my-2">
-              Our Products <FaAnglesRight />
-            </a>
-          </p>
+          <p></p>
         </div>
       </div>
     </section>
