@@ -1,0 +1,48 @@
+.costum-checkoutForm {
+  max-width: 600px;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.costum-checkoutForm .form-label {
+  font-weight: 500;
+  color: #343a40;
+}
+
+.costum-checkoutForm .form-control {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.costum-checkoutForm .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.costum-checkoutForm .mb-3 {
+  margin-bottom: 1.25rem;
+}
+
+.checkoutBtn {
+  display: block;
+  width: 100%;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkoutBtn:hover {
+  background-color: #0b5ed7;
+}

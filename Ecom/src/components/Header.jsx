@@ -3,12 +3,20 @@ import "../css/Header.css";
 import { FiShoppingBag } from "react-icons/fi";
 import user from "../assets/user.png";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { deleteFromBag } from "../store/BagSlice";
 
 const Header = () => {
   const bag = useSelector((state) => state.bag);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate("/checkout");
+  };
+
+  const location = useLocation();
+  const path = location.pathname === "/checkout";
 
   return (
     <>
@@ -70,18 +78,20 @@ const Header = () => {
             </form>
 
             {/* Bag Button with Offcanvas Trigger */}
-            <button
-              className="bagBtn me-3"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
-            >
-              <FiShoppingBag className="bag" />
-              {bag.length > 0 && (
-                <span className="badge text-bg-danger">{bag.length}</span>
-              )}
-            </button>
+            {!path && (
+              <button
+                className="bagBtn me-3"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              >
+                <FiShoppingBag className="bag" />
+                {bag.length > 0 && (
+                  <span className="badge text-bg-danger">{bag.length}</span>
+                )}
+              </button>
+            )}
 
             <div className="dropdown text-end">
               <a
@@ -129,64 +139,69 @@ const Header = () => {
       </header>
 
       {/* Offcanvas Component */}
-      <div
-        className="offcanvas offcanvas-end"
-        tabIndex="-1"
-        id="offcanvasRight"
-        aria-labelledby="offcanvasRightLabel"
-      >
-        <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasRightLabel">
-            Your Bag
-          </h5>
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div className="offcanvas-body">
-          {bag.length === 0 ? (
-            <p className="text-center mt-5">Your bag is empty.</p>
-          ) : (
-            <>
-              <div className="bag-header">
-                <h6>Name</h6>
+      {!path && (
+        <div
+          className="offcanvas offcanvas-end"
+          tabIndex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="offcanvasRightLabel">
+              Your Bag
+            </h5>
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="offcanvas-body">
+            {bag.length === 0 ? (
+              <p className="text-center mt-5">Your bag is empty.</p>
+            ) : (
+              <>
+                <div className="bag-header">
+                  <h6>Name</h6>
 
-                <span>
-                  <span style={{ marginRight: "1rem" }}>Price </span>Delete
-                </span>
-              </div>
-
-              {bag.map((item, index) => (
-                <div className="bag-item" key={index}>
-                  <img src={item.productImage} alt={item.productName} />
-                  <div className="bag-item-details">
-                    <h6>{item.productName}</h6>
-                    <p>Qty: {item.quantity}</p>
-                  </div>
-                  <span>NPR {item.productPrice}</span>
-                  <button onClick={() => dispatch(deleteFromBag(item.id))}>
-                    ×
-                  </button>
+                  <span>
+                    <span style={{ marginRight: "1rem" }}>Price </span>Delete
+                  </span>
                 </div>
-              ))}
-              <div className="bag-total">
-                <span>Total:</span>
-                <span>
-                  NPR{" "}
-                  {bag.reduce(
-                    (total, item) => total + item.productPrice * item.quantity,
-                    0
-                  )}
-                </span>
-              </div>
-              <button className="checkout-btn">Proceed to Checkout</button>
-            </>
-          )}
+
+                {bag.map((item, index) => (
+                  <div className="bag-item" key={index}>
+                    <img src={item.productImage} alt={item.productName} />
+                    <div className="bag-item-details">
+                      <h6>{item.productName}</h6>
+                      <p>Qty: {item.quantity}</p>
+                    </div>
+                    <span>NPR {item.productPrice}</span>
+                    <button onClick={() => dispatch(deleteFromBag(item.id))}>
+                      ×
+                    </button>
+                  </div>
+                ))}
+                <div className="bag-total">
+                  <span>Total:</span>
+                  <span>
+                    NPR{" "}
+                    {bag.reduce(
+                      (total, item) =>
+                        total + item.productPrice * item.quantity,
+                      0
+                    )}
+                  </span>
+                </div>
+                <button onClick={handleCheckout} className="checkout-btn">
+                  Proceed to Checkout
+                </button>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
